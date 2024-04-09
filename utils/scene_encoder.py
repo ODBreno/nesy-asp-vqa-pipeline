@@ -7,7 +7,7 @@ import torch
 from pytorchyolo import models
 from pytorchyolo.detect import detect
 from pytorchyolo.utils.utils import rescale_boxes, to_cpu
-from utils.utils import PostprocessingMethod
+from utils import PostprocessingMethod
 
 
 class SceneEncoder:

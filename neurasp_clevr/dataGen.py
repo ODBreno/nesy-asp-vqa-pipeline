@@ -23,7 +23,8 @@ def termPath2dataList(termPath, img_size, domain, conf_thres, weights_path, enc_
 
     for _, img in tqdm(dataloader):
         # img = Variable(img.type(torch.FloatTensor))
-        img = img.to("cuda")
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        img = img.to(device)
         with torch.no_grad():
             output = yolo(img)
 
